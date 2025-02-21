@@ -1,0 +1,136 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-1/5 bg-gradient-to-b from-blue-500 to-purple-700 text-white p-4">
+            <div class="text-2xl font-bold mb-8">Diane's Pharmacy</div>
+            <ul>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/home/" class="flex items-center p-2 bg-white text-blue-500 rounded-lg">
+                        <i class="fas fa-home mr-2"></i> Home
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/inventory/" class="flex items-center p-2">
+                        <i class="fas fa-boxes mr-2"></i> Inventory
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/product/" class="flex items-center p-2">
+                        <i class="fas fa-capsules mr-2"></i> Product
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/customer/" class="flex items-center p-2">
+                        <i class="fas fa-users mr-2"></i> Customer
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/sales/" class="flex items-center p-2">
+                        <i class="fas fa-chart-line mr-2"></i> Sales
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/supplier/" class="flex items-center p-2">
+                        <i class="fas fa-truck mr-2"></i> Supplier
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/user/" class="flex items-center p-2">
+                        <i class="fas fa-user mr-2"></i> User
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/report/" class="flex items-center p-2">
+                        <i class="fas fa-file-alt mr-2"></i> Report
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/auditlog/" class="flex items-center p-2">
+                        <i class="fas fa-clipboard-list mr-2"></i> Audit Log
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="flex items-center p-2">
+                        <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Main Content -->
+        <div class="w-4/5 p-6">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div class="text-xl font-bold text-purple-700"><i class="fas fa-home mr-2"></i> Dashboard</div>
+                <div class="text-lg">Hello, Admin <i class="fas fa-user-circle ml-2"></i></div>
+            </div>
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-4 mb-6">
+                <div class="bg-gray-200 p-4 rounded-lg flex items-center justify-between">
+                    <div>
+                        <div class="text-3xl font-bold">32</div>
+                        <div class="text-gray-600">Total Inventory</div>
+                    </div>
+                    <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg flex items-center justify-between">
+                    <div>
+                        <div class="text-3xl font-bold">126</div>
+                        <div class="text-gray-600">Total Product</div>
+                    </div>
+                    <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                </div>
+                <div class="bg-gray-200 p-4 rounded-lg flex items-center justify-between">
+                    <div>
+                        <div class="text-3xl font-bold">71</div>
+                        <div class="text-gray-600">Total Customer</div>
+                    </div>
+                    <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg flex items-center justify-between">
+                    <div>
+                        <div class="text-3xl font-bold">78</div>
+                        <div class="text-gray-600">Total Sales</div>
+                    </div>
+                    <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                </div>
+                <div class="bg-gray-200 p-4 rounded-lg flex items-center justify-between">
+                    <div>
+                        <div class="text-3xl font-bold">18</div>
+                        <div class="text-gray-600">Total Supplier</div>
+                    </div>
+                    <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg flex items-center justify-between">
+                    <div>
+                        <div class="text-3xl font-bold">4</div>
+                        <div class="text-gray-600">Total User</div>
+                    </div>
+                    <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                </div>
+            </div>
+            <!-- Alerts -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-purple-700 text-white p-4 rounded-lg">
+                    <div class="font-bold mb-2">Low Stock</div>
+                    <div class="bg-blue-500 p-2 rounded-lg">
+                        Paracetamol 500mg Tablets – Only 10 packs remaining!<br>
+                        Please restock soon to avoid running out.
+                    </div>
+                </div>
+                <div class="bg-purple-700 text-white p-4 rounded-lg">
+                    <div class="font-bold mb-2">Expired Product</div>
+                    <div class="bg-blue-500 p-2 rounded-lg">
+                        Amoxicillin 250mg Capsules expired on January 31, 2023.<br>
+                        Please remove from inventory and replace with a fresh batch.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

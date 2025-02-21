@@ -1,0 +1,44 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-[#E0E7EC] p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-center text-2xl font-bold text-[#4B2354] mb-6">Add Inventory Form</h2>
+        <form>
+            <div class="mb-6">
+                <label class="block text-[#6B7280] mb-2" for="product-name">Product Name</label>
+                <input class="w-full bg-[#E0E7EC] border-b-2 border-[#6B7280] focus:outline-none focus:border-[#3B82F6]" type="text" id="product-name" placeholder="Product Name">
+            </div>
+            <div class="flex space-x-4 mb-6">
+                <div class="w-1/2">
+                    <label class="block text-[#6B7280] mb-2" for="stock-in">Stock In</label>
+                    <input class="w-full bg-[#E0E7EC] border-b-2 border-[#6B7280] focus:outline-none focus:border-[#3B82F6]" type="text" id="stock-in" placeholder="Stock In">
+                </div>
+                <div class="w-1/2">
+                    <label class="block text-[#6B7280] mb-2" for="stock-out">Stock Out</label>
+                    <input class="w-full bg-[#E0E7EC] border-b-2 border-[#6B7280] focus:outline-none focus:border-[#3B82F6]" type="text" id="stock-out" placeholder="Stock Out">
+                </div>
+            </div>
+            <div class="flex space-x-4 mb-8">
+                <div class="w-1/2">
+                    <label class="block text-[#6B7280] mb-2" for="expiry-date">Expiry Date</label>
+                    <div class="relative">
+                        <input class="w-full bg-[#E0E7EC] border-b-2 border-[#6B7280] focus:outline-none focus:border-[#3B82F6]" type="text" id="expiry-date" placeholder="Expiry Date">
+                        <i class="fas fa-calendar-alt absolute right-0 top-0 mt-2 mr-2 text-[#6B7280]"></i>
+                    </div>
+                </div>
+                <div class="w-1/2">
+                    <label class="block text-[#6B7280] mb-2" for="low-stock-threshold">Low Stock Threshold</label>
+                    <input class="w-full bg-[#E0E7EC] border-b-2 border-[#6B7280] focus:outline-none focus:border-[#3B82F6]" type="text" id="low-stock-threshold" placeholder="Low Stock Threshold">
+                </div>
+            </div>
+            <div class="flex justify-between">
+                <button class="bg-[#4B2354] text-white py-2 px-4 rounded-lg hover:bg-[#3A1A42]">Cancel</button>
+                <button class="bg-[#0F3D4B] text-white py-2 px-4 rounded-lg hover:bg-[#0C2F3A]">Save</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

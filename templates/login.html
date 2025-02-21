@@ -1,0 +1,43 @@
+<!-- myapp/templates/login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="h-screen flex items-center justify-center bg-gray-100">
+    <div class="flex w-full max-w-4xl shadow-lg">
+        <!-- Left Side -->
+        <div class="w-1/2 bg-white p-10 flex flex-col justify-center">
+            <h2 class="text-3xl font-bold mb-8 text-gray-700">Login</h2>
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <label class="block text-gray-600 mb-2" for="username">Username or Email</label>
+                    <div class="relative">
+                            <input name="username" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-600" type="text" id="username" placeholder="Username or Email" required>
+                        <i class="fas fa-user absolute right-3 top-3 text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-600 mb-2" for="password">Password</label>
+                    <div class="relative">
+                        <input name="password" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-600" type="password" id="password" placeholder="Password" required>
+                        <i class="fas fa-lock absolute right-3 top-3 text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="mb-6 text-right">
+                    <a href="#" class="text-purple-600 hover:underline">Forgot Password?</a>
+                </div>
+                <button type="submit" class="w-full bg-violet-900 text-white py-2 rounded-full hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600">
+                    Login
+                </button>
+            </form>
+        </div>
+        <!-- Right Side -->
+        <div class="w-1/2 bg-gradient-to-b from-cyan-800 to-violet-900 flex items-center justify-center">
+            <h1 class="text-6xl text-white font-bold">LOGO</h1>
+        </div>
+    </div>
+</body>
+</html>

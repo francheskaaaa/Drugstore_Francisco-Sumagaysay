@@ -1,0 +1,94 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-1/5 bg-gradient-to-b from-blue-500 to-purple-700 text-white p-4">
+            <div class="text-2xl font-bold mb-8">Diane's Pharmacy</div>
+            <ul>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/home/" class="flex items-center p-2">
+                        <i class="fas fa-home mr-2"></i> Home
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/inventory/" class="flex items-center p-2">
+                        <i class="fas fa-boxes mr-2"></i> Inventory
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/product/" class="flex items-center p-2">
+                        <i class="fas fa-capsules mr-2"></i> Product
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/customer/" class="flex items-center p-2">
+                        <i class="fas fa-users mr-2"></i> Customer
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/sales/" class="flex items-center p-2 bg-white text-blue-500 rounded-lg">
+                        <i class="fas fa-chart-line mr-2"></i> Sales
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="http://127.0.0.1:8000/supplier/" class="flex items-center p-2">
+                        <i class="fas fa-truck mr-2"></i> Supplier
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="user.html" class="flex items-center p-2">
+                        <i class="fas fa-user mr-2"></i> User
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="report.html" class="flex items-center p-2">
+                        <i class="fas fa-file-alt mr-2"></i> Report
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="auditLog.html" class="flex items-center p-2">
+                        <i class="fas fa-clipboard-list mr-2"></i> Audit Log
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="flex items-center p-2">
+                        <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Main Content -->
+        <div class="w-4/5 p-4">
+            <!-- Header -->
+            <div class="flex justify-between items-center bg-purple-200 p-4 rounded">
+                <div class="text-xl font-bold"><i class="fas fa-box mr-2"></i> Inventory Management</div>
+                <div class="flex items-center">
+                    <div class="mr-4">Hello, Admin</div>
+                    <i class="fas fa-user-circle text-2xl"></i>
+                </div>
+            </div>
+
+            <!-- Search and Buttons -->
+            <div class="flex justify-between items-center mt-4">
+                <div class="flex items-center bg-white p-2 rounded shadow">
+                    <input type="text" placeholder="Search" class="outline-none">
+                    <i class="fas fa-search ml-2"></i>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="bg-purple-700 text-white px-4 py-2 rounded">Add Inventory</button>
+                    <button class="bg-gray-700 text-white px-4 py-2 rounded">Manage Inventory</button>
+                </div>
+            </div>
+
+            <!-- Table Placeholder -->
+            <div class="bg-gray-300 h-96 mt-4 rounded flex items-center justify-center text-4xl text-gray-500">
+                TABLE
+            </div>
+        </div>
+    </div>
+</body>
+</html>

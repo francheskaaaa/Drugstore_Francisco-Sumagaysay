@@ -41,6 +41,7 @@ class Product(models.Model):
     product_name = models.CharField(max_length=500)
     category_id = models.ForeignKey(Category, on_delete=models.PROTECT)
     description = models.TextField()
+    low_stock_threshold = models.IntegerField()  # Threshold for low-stock warnings
     base_price = models.DecimalField(max_digits=10, decimal_places=2)
     unit_price = models.DecimalField(max_digits=10, decimal_places=2)
     supplier_id = models.ForeignKey(Supplier, on_delete=models.PROTECT)
@@ -62,7 +63,7 @@ class PurchaseOrderDetails(models.Model):
 
 class Inventory(models.Model):
     inventory_id = models.AutoField(primary_key=True)
-    product_id = models.ForeignKey(Product, on_delete=models.PROTECT)  # Foreign key to Product
+    product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='inventory_product')  # Foreign key to Product
     batch_number = models.CharField(  # New field for batch tracking
         max_length=100,
         null=True,
@@ -78,9 +79,9 @@ class Inventory(models.Model):
     )
     stock_in = models.IntegerField()  # Number of items added to inventory
     stock_out = models.IntegerField()  # Number of items removed from inventory
-    expiration_date = models.DateField()  # Expiry date of the inventory
+    expiration_date = models.DateTimeField()  # Expiry date of the inventory
     stock_available = models.IntegerField()  # Current stock remaining
-    low_stock_threshold = models.IntegerField()  # Threshold for low-stock warnings
+  # Threshold for low-stock warnings
 
 
 class Customer(models.Model):

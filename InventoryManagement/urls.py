@@ -14,6 +14,7 @@ router.register('category', views.CategoryViewSet,basename='category')
 router.register('supplier', views.SupplierViewSet,basename='supplier')
 router.register('product', views.ProductViewSet,basename='product')
 router.register('purchaseOrder', views.PurchaseOrderViewSet, basename='purchaseOrder')
+router.register('inventory', views.InventoryViewSet, basename='inventory')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),

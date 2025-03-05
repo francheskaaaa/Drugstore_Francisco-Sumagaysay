@@ -11,7 +11,8 @@ from .models import User
 from DrugstoreApp.models import User, Report, AuditLog, Category, Supplier, Product, Inventory, PurchaseOrder, \
     PurchaseOrderDetails, Customer, Discount, Sales, SalesDetails, ExpiredProduct
 from .serializers import UserSerializer, ReportSerializer, AuditLogSerializer, ProductSerializer, CategorySerializer, \
-    SupplierSerializer, PurchaseOrderSerializer, PurchaseOrderDetailsSerializer, PurchaseOrderDetailsSerializerSimple
+    SupplierSerializer, PurchaseOrderSerializer, PurchaseOrderDetailsSerializer, PurchaseOrderDetailsSerializerSimple, \
+    InventorySerializer
 
 
 # class UserViewSet(viewsets.ModelViewSet):
@@ -372,6 +373,48 @@ class PurchaseOrderViewSet(viewsets.ViewSet):
             response_dict = {"error": False, "message": "Purchase Order Data has been Updated Successfully"}
         else:
             response_dict = {"error": True, "message": "Error Updating Purchase Order Data"}
+
+        return Response(response_dict)
+
+class InventoryViewSet(viewsets.ViewSet):
+    authenticated_users = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    @staticmethod
+    def list(request):
+        inventory = Inventory.objects.all()
+        serializer = InventorySerializer(inventory, many=True, context={'request': request})
+        response_dict = {"error": False, "message": "All Inventory List Data", "data": serializer.data}
+        return Response(response_dict)
+
+    @staticmethod
+    def create(request):
+        serializer = InventorySerializer(data=request.data, context={'request': request})
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            response_dict = {"error": False, "message": "Inventory Created Successfully"}
+        else:
+            response_dict = {"error": True, "message": "Inventory Not Created"}
+
+        return Response(response_dict)
+
+    @staticmethod
+    def retrieve(request, pk=None):
+        queryset=Inventory.objects.all()
+        inventory=get_object_or_404(queryset,pk=pk)
+        serializer=InventorySerializer(inventory,context={'request':request})
+        return Response({"error": False,"message":"Single Data Fetch","data": serializer.data})
+
+    @staticmethod
+    def update(request, pk=None):
+        queryset = Inventory.objects.all()
+        inventory = get_object_or_404(queryset, pk=pk)
+        serializer = InventorySerializer(inventory, data=request.data, context={'request': request})
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            response_dict = {"error": False, "message": "Inventory Data has been Updated Successfully"}
+        else:
+            response_dict = {"error": True, "message": "Error Updating Product Data"}
 
         return Response(response_dict)
 

@@ -102,6 +102,8 @@ class PurchaseOrderDetailsSerializerSimple(serializers.ModelSerializer):
         return response
 
 class InventorySerializer(serializers.ModelSerializer):
+    expiration_date = serializers.DateTimeField()
+
     class Meta:
         model = Inventory
         fields = "__all__"
